@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<!--Generated with glade3 3.4.3 on Wed Mar 11 20:46:26 2009 -->
+<glade-interface>
+  <widget class="GtkWindow" id="main-window">
+    <property name="title" translatable="yes">SAMConnector</property>
+    <child>
+      <widget class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkHBox" id="hbox1">
+            <property name="visible">True</property>
+            <property name="spacing">6</property>
+            <child>
+              <widget class="GtkVBox" id="vbox2">
+                <property name="visible">True</property>
+                <property name="spacing">5</property>
+                <child>
+                  <widget class="GtkFrame" id="connection-frame">
+                    <property name="visible">True</property>
+                    <property name="label_xalign">0</property>
+                    <property name="shadow_type">GTK_SHADOW_NONE</property>
+                    <child>
+                      <widget class="GtkAlignment" id="alignment6">
+                        <property name="visible">True</property>
+                        <property name="top_padding">10</property>
+                        <property name="bottom_padding">5</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <widget class="GtkVBox" id="vbox9">
+                            <property name="visible">True</property>
+                            <property name="spacing">5</property>
+                            <child>
+                              <widget class="GtkHBox" id="hbox17">
+                                <property name="visible">True</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label29">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;server:&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                    <property name="justify">GTK_JUSTIFY_RIGHT</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="padding">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkEntry" id="server-entry">
+                                    <property name="width_request">100</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="text" translatable="yes">172.24.12.42</property>
+                                    <property name="xalign">0.5</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="padding">2</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkToggleButton" id="connect-button">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <property name="focus_on_click">False</property>
+                                    <property name="response_id">0</property>
+                                    <child>
+                                      <widget class="GtkImage" id="image5">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-connect</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">2</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkHBox" id="hbox7">
+                                <property name="visible">True</property>
+                                <property name="spacing">9</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label35">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;update:&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                    <property name="justify">GTK_JUSTIFY_RIGHT</property>
+                                    <property name="single_line_mode">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkHBox" id="hbox4">
+                                    <property name="visible">True</property>
+                                    <property name="spacing">5</property>
+                                    <child>
+                                      <widget class="GtkSpinButton" id="interval-spinbutton">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="max_length">4</property>
+                                        <property name="adjustment">20 20 1000 10 100 10</property>
+                                        <property name="climb_rate">10</property>
+                                        <property name="snap_to_ticks">True</property>
+                                        <property name="numeric">True</property>
+                                        <property name="update_policy">GTK_UPDATE_IF_VALID</property>
+                                      </widget>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkLabel" id="label7">
+                                        <property name="visible">True</property>
+                                        <property name="label" translatable="yes">sec</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkVBox" id="vbox12">
+                                <property name="visible">True</property>
+                                <child>
+                                  <widget class="GtkCheckButton" id="keep-trying-check">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="focus_on_click">False</property>
+                                    <property name="response_id">0</property>
+                                    <property name="active">True</property>
+                                    <property name="draw_indicator">True</property>
+                                    <child>
+                                      <widget class="GtkLabel" id="label10">
+                                        <property name="visible">True</property>
+                                        <property name="label" translatable="yes">Blijf proberen bij mislukte verbinding</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="label34">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Kaeser SIGMA AIR CONTROL&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
+                        <property name="single_line_mode">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkFrame" id="logging-frame">
+                    <property name="visible">True</property>
+                    <property name="label_xalign">0</property>
+                    <property name="shadow_type">GTK_SHADOW_NONE</property>
+                    <child>
+                      <widget class="GtkAlignment" id="alignment4">
+                        <property name="visible">True</property>
+                        <property name="top_padding">10</property>
+                        <property name="bottom_padding">5</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <widget class="GtkVBox" id="vbox6">
+                            <property name="visible">True</property>
+                            <property name="spacing">5</property>
+                            <child>
+                              <widget class="GtkHBox" id="hbox9">
+                                <property name="visible">True</property>
+                                <child>
+                                  <widget class="GtkFileChooserButton" id="filechooserbutton">
+                                    <property name="visible">True</property>
+                                    <property name="action">GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</property>
+                                    <property name="do_overwrite_confirmation">True</property>
+                                  </widget>
+                                </child>
+                                <child>
+                                  <widget class="GtkToggleButton" id="log-button">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">True</property>
+                                    <property name="focus_on_click">False</property>
+                                    <property name="response_id">0</property>
+                                    <child>
+                                      <widget class="GtkImage" id="image1">
+                                        <property name="visible">True</property>
+                                        <property name="stock">gtk-execute</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="label17">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Logging&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
+                        <property name="single_line_mode">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkHSeparator" id="hseparator1">
+                    <property name="visible">True</property>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkFrame" id="general-frame">
+                    <property name="visible">True</property>
+                    <property name="label_xalign">0</property>
+                    <property name="shadow_type">GTK_SHADOW_NONE</property>
+                    <child>
+                      <widget class="GtkAlignment" id="alignment1">
+                        <property name="visible">True</property>
+                        <property name="top_padding">10</property>
+                        <property name="bottom_padding">5</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <widget class="GtkVBox" id="vbox3">
+                            <property name="visible">True</property>
+                            <property name="spacing">6</property>
+                            <child>
+                              <widget class="GtkHBox" id="hbox2">
+                                <property name="visible">True</property>
+                                <property name="spacing">20</property>
+                                <child>
+                                  <widget class="GtkVBox" id="vbox3">
+                                    <property name="visible">True</property>
+                                    <property name="spacing">7</property>
+                                    <child>
+                                      <widget class="GtkHBox" id="hbox3">
+                                        <property name="visible">True</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <widget class="GtkLabel" id="time-label">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">&lt;b&gt;tijd:&lt;/b&gt;</property>
+                                            <property name="use_markup">True</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkLabel" id="labelDD98">
+                                            <property name="visible">True</property>
+                                            <property name="width_chars">8</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="pack_type">GTK_PACK_END</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </widget>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkHBox" id="hbox5">
+                                        <property name="visible">True</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <widget class="GtkLabel" id="date-label">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">&lt;b&gt;datum:&lt;/b&gt;</property>
+                                            <property name="use_markup">True</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkLabel" id="labelDD100">
+                                            <property name="visible">True</property>
+                                            <property name="width_chars">8</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="pack_type">GTK_PACK_END</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </widget>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkVBox" id="vbox11">
+                                    <property name="visible">True</property>
+                                    <property name="spacing">7</property>
+                                    <child>
+                                      <widget class="GtkHBox" id="hbox8">
+                                        <property name="visible">True</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <widget class="GtkLabel" id="druk-label">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">&lt;b&gt;druk:&lt;/b&gt;</property>
+                                            <property name="use_markup">True</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkLabel" id="labelDW66">
+                                            <property name="visible">True</property>
+                                            <property name="width_chars">7</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="pack_type">GTK_PACK_END</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </widget>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkHBox" id="hbox10">
+                                        <property name="visible">True</property>
+                                        <property name="spacing">5</property>
+                                        <child>
+                                          <widget class="GtkLabel" id="sequence-label">
+                                            <property name="visible">True</property>
+                                            <property name="label" translatable="yes">&lt;b&gt;volgorde:&lt;/b&gt;</property>
+                                            <property name="use_markup">True</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="GtkLabel" id="labelDW96">
+                                            <property name="visible">True</property>
+                                            <property name="width_chars">5</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="pack_type">GTK_PACK_END</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </widget>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="expand">False</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="label1">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Algemene Info&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
+                        <property name="single_line_mode">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="GtkFrame" id="compressors-frame">
+                    <property name="visible">True</property>
+                    <property name="label_xalign">0</property>
+                    <property name="shadow_type">GTK_SHADOW_NONE</property>
+                    <child>
+                      <widget class="GtkAlignment" id="alignment3">
+                        <property name="visible">True</property>
+                        <property name="top_padding">17</property>
+                        <property name="bottom_padding">10</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <widget class="GtkHBox" id="hbox6">
+                            <property name="visible">True</property>
+                            <property name="spacing">20</property>
+                            <child>
+                              <widget class="GtkVBox" id="vbox5">
+                                <property name="visible">True</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <widget class="GtkImage" id="statusKOM1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-missing-image</property>
+                                    <property name="icon_size">6</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                            </child>
+                            <child>
+                              <widget class="GtkVBox" id="vbox7">
+                                <property name="visible">True</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <widget class="GtkImage" id="statusKOM2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-missing-image</property>
+                                    <property name="icon_size">6</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkVBox" id="vbox8">
+                                <property name="visible">True</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <widget class="GtkImage" id="statusKOM3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-missing-image</property>
+                                    <property name="icon_size">6</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="GtkVBox" id="vbox10">
+                                <property name="visible">True</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <widget class="GtkImage" id="statusKOM4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-missing-image</property>
+                                    <property name="icon_size">6</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="position">3</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="GtkLabel" id="label40">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Compressors Status&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
+                        <property name="single_line_mode">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="padding">5</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">7</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVSeparator" id="vseparator1">
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">5</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkVBox" id="vbox44">
+                <property name="visible">True</property>
+                <property name="spacing">1</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <widget class="GtkVBox" id="vbox4">
+                    <property name="visible">True</property>
+                    <child>
+                      <widget class="GtkFrame" id="extra-frame">
+                        <property name="visible">True</property>
+                        <property name="label_xalign">0</property>
+                        <property name="shadow_type">GTK_SHADOW_NONE</property>
+                        <child>
+                          <widget class="GtkAlignment" id="alignment2">
+                            <property name="visible">True</property>
+                            <property name="top_padding">5</property>
+                            <property name="bottom_padding">10</property>
+                            <property name="left_padding">12</property>
+                            <child>
+                              <widget class="GtkTable" id="com-table">
+                                <property name="visible">True</property>
+                                <property name="n_rows">13</property>
+                                <property name="n_columns">5</property>
+                                <property name="column_spacing">10</property>
+                                <property name="row_spacing">6</property>
+                                <child>
+                                  <widget class="GtkLabel" id="label115">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">gestuurd</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">12</property>
+                                    <property name="bottom_attach">13</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label26">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">beschikbaar</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">11</property>
+                                    <property name="bottom_attach">12</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label24">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">schakelbaar</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">10</property>
+                                    <property name="bottom_attach">11</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label22">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">vollast commando</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">9</property>
+                                    <property name="bottom_attach">10</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label20">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;vollast&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">8</property>
+                                    <property name="bottom_attach">9</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label19">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;nullast&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">7</property>
+                                    <property name="bottom_attach">8</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label18">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;motor loopt&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label12">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;alarmmelding&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label15">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Controller aan</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">5</property>
+                                    <property name="bottom_attach">6</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label14">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">waarschuwingsmelding</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">4</property>
+                                    <property name="bottom_attach">5</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label13">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">servicemelding</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label9">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Aan (geen alarm)</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label8">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;KOM4&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label6">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;KOM3&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label4">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;KOM1&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label3">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">&lt;b&gt;KOM2&lt;/b&gt;</property>
+                                    <property name="use_markup">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkLabel" id="label16">
+                                    <property name="visible">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW38-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW38-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW38-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW38-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">1</property>
+                                    <property name="bottom_attach">2</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW39-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW39-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW39-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW39-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW40-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW40-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW40-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW40-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">3</property>
+                                    <property name="bottom_attach">4</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW41-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">4</property>
+                                    <property name="bottom_attach">5</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW41-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">4</property>
+                                    <property name="bottom_attach">5</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW41-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">4</property>
+                                    <property name="bottom_attach">5</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW41-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">4</property>
+                                    <property name="bottom_attach">5</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW43-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">5</property>
+                                    <property name="bottom_attach">6</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW43-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">5</property>
+                                    <property name="bottom_attach">6</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW43-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">5</property>
+                                    <property name="bottom_attach">6</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW43-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">5</property>
+                                    <property name="bottom_attach">6</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW44-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW44-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW44-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW44-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW45-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">7</property>
+                                    <property name="bottom_attach">8</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW45-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">7</property>
+                                    <property name="bottom_attach">8</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW45-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">7</property>
+                                    <property name="bottom_attach">8</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW45-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">7</property>
+                                    <property name="bottom_attach">8</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW46-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">8</property>
+                                    <property name="bottom_attach">9</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW46-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">8</property>
+                                    <property name="bottom_attach">9</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW46-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">8</property>
+                                    <property name="bottom_attach">9</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW46-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">8</property>
+                                    <property name="bottom_attach">9</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW47-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">9</property>
+                                    <property name="bottom_attach">10</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW47-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">9</property>
+                                    <property name="bottom_attach">10</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW47-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">9</property>
+                                    <property name="bottom_attach">10</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW47-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">9</property>
+                                    <property name="bottom_attach">10</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW48-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">10</property>
+                                    <property name="bottom_attach">11</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW48-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">10</property>
+                                    <property name="bottom_attach">11</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW48-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">10</property>
+                                    <property name="bottom_attach">11</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW48-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">10</property>
+                                    <property name="bottom_attach">11</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW53-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">11</property>
+                                    <property name="bottom_attach">12</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW53-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">11</property>
+                                    <property name="bottom_attach">12</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW53-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">11</property>
+                                    <property name="bottom_attach">12</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW53-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">11</property>
+                                    <property name="bottom_attach">12</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW54-1">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">12</property>
+                                    <property name="bottom_attach">13</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW54-2">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">2</property>
+                                    <property name="right_attach">3</property>
+                                    <property name="top_attach">12</property>
+                                    <property name="bottom_attach">13</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW54-3">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">3</property>
+                                    <property name="right_attach">4</property>
+                                    <property name="top_attach">12</property>
+                                    <property name="bottom_attach">13</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkImage" id="imageDW54-4">
+                                    <property name="visible">True</property>
+                                    <property name="stock">gtk-cancel</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="left_attach">4</property>
+                                    <property name="right_attach">5</property>
+                                    <property name="top_attach">12</property>
+                                    <property name="bottom_attach">13</property>
+                                    <property name="x_options"></property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                              </widget>
+                            </child>
+                          </widget>
+                        </child>
+                        <child>
+                          <widget class="GtkLabel" id="label2">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">&lt;b&gt;Extra Info&lt;/b&gt;</property>
+                            <property name="use_markup">True</property>
+                            <property name="single_line_mode">True</property>
+                          </widget>
+                          <packing>
+                            <property name="type">label_item</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="padding">5</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">5</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
