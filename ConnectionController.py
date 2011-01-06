@@ -20,12 +20,17 @@ class ConnectionController(GObject):
 
 	__gsignals__ = {'data-arrived': (gobject.SIGNAL_RUN_FIRST, None, ()),}
 
+	@property
+	def parser(self):
+		return self._parser
+
+
 	def __init__(self, app):
 		GObject.__init__(self)
 
 		self._app = app
 		self._glade = app.glade
-		self.parser = SAMParser()
+		self._parser = None
 		
 		self._timeout_id = None
 			
@@ -67,20 +72,8 @@ class ConnectionController(GObject):
 				gobject.source_remove(self._timeout_id)
 				self._timeout_id = None
 		if button.get_active():
-			try:
-				data = self._connection.read()
-			except URLError:
-				dialog = gtk.MessageDialog(None, 
-											gtk.DIALOG_DESTROY_WITH_PARENT,
-											gtk.MESSAGE_ERROR,
-											gtk.BUTTONS_OK,
-											'Kan geen verbinding met de server maken')
-				dialog.run()
-				dialog.destroy()
-				self._connect_button.set_active(False)
-			else:
-				self._timeout_id = gobject.timeout_add_seconds(self._timeout, self._timeout_cb)
-				self._timeout_cb()
+			self._timeout_id = gobject.timeout_add_seconds(self._timeout, self._timeout_cb)
+			self._timeout_cb()
 		
 		self._host_entry.set_sensitive(not button.get_active())
 
@@ -91,10 +84,13 @@ class ConnectionController(GObject):
 
 	def _timeout_cb(self):
 		debug('ConnectionController: entering timeout_cb')
-		th = ReadThread(self._connection)
-		th.start()
-		gtk.main_iteration()
-		th.join()
+		self._thread = ReadParseThread(self._connection)
+		self._thread.connect('finished', self._thread_finished)
+		self._thread.start()
+		self._thread.join()
+
+	
+	def _thread_finished(self, th, parser):
 		if th.error:
 			if self._stop_on_error:
 				error('ConnectionController: could not read the connection')
@@ -106,16 +102,11 @@ class ConnectionController(GObject):
 				dialog.run()
 				dialog.destroy()
 				self._connect_button.set_active(False)
-				return False
-			else:
-				return True
 		else:
-			data = th.data
-			start = time()
-			debug('ConnectionController: start parsing the data')
-			self.parser.parseData(data)
+			self._parser = parser
 			self.emit('data-arrived')
-			return True	
+		
+
 
 
 	def activate(self, active):
@@ -123,20 +114,32 @@ class ConnectionController(GObject):
 		
 		
 	
-class ReadThread(Thread):
+class ReadParseThread(Thread, GObject):
 	
+	__gsignals__ = {'finished': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE, 
+													(gobject.TYPE_PYOBJECT,)),}
+
 	def __init__(self, connection):
+		debug ('ReadParseThread: Initializing')
 		Thread.__init__(self)
+		GObject.__init__(self)
 		self._connection = connection
-		self.data = None
 		self.error = False
-		
 
 	def run(self):
+		debug ('ReadParseThread: Running')
 		try:
-			start = time()
-			self.data = self._connection.read()
+			debug('ReadParseThread: try to read from connection')
+			data = self._connection.read()
 		except URLError:
+			debug('ReadParseThread: Error')
 			self.error = True
 			return
+		
+		parser = SAMParser()
+		parser.parseData(data)
+		
+		debug('ReadParseThread: emiting finished signal')
+		self.emit('finished', parser)
 
+		

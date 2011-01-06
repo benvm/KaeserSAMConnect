@@ -128,7 +128,8 @@ def main():
 		app.window.show_all()	
 	#activate controllers only after main loop is started 
 	gobject.timeout_add_seconds(2, _activate_controllers, app, options)
-	
+
+	gobject.threads_init()
 	gtk.main()
 
 
