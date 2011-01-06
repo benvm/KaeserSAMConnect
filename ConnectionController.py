@@ -1,4 +1,5 @@
 from time import time
+from threading import Thread
 
 import gobject
 import gtk
@@ -90,12 +91,11 @@ class ConnectionController(GObject):
 
 	def _timeout_cb(self):
 		debug('ConnectionController: entering timeout_cb')
-		try:
-			start = time()
-			debug('ConnectionController: try to read from the connection')
-			data = self._connection.read()
-			debug('ConnectionController: time taken to  read: %d ms' % ((time() - start) * 1000))
-		except URLError:
+		th = ReadThread(self._connection)
+		th.start()
+		gtk.main_iteration()
+		th.join()
+		if th.error:
 			if self._stop_on_error:
 				error('ConnectionController: could not read the connection')
 				dialog = gtk.MessageDialog(None, 
@@ -106,23 +106,37 @@ class ConnectionController(GObject):
 				dialog.run()
 				dialog.destroy()
 				self._connect_button.set_active(False)
-				debug('ConnectionController: returning False in _timeout_cb')
 				return False
 			else:
-				debug('ConnectionController: returning True in _timeout_cb')
 				return True
-
-		start = time()
-		debug('ConnectionController: start parsing the data')
-		self.parser.parseData(data)
-		debug('ConnectionController: time taken to  parse: %d ms' % ((time() - start) * 1000))
-		self.emit('data-arrived')
-		debug('ConnectionController: returning True in _timeout_cb')
-		return True	
+		else:
+			data = th.data
+			start = time()
+			debug('ConnectionController: start parsing the data')
+			self.parser.parseData(data)
+			self.emit('data-arrived')
+			return True	
 
 
 	def activate(self, active):
 		self._connect_button.set_active(active)
 		
 		
+	
+class ReadThread(Thread):
+	
+	def __init__(self, connection):
+		Thread.__init__(self)
+		self._connection = connection
+		self.data = None
+		self.error = False
 		
+
+	def run(self):
+		try:
+			start = time()
+			self.data = self._connection.read()
+		except URLError:
+			self.error = True
+			return
+

@@ -1,11 +1,8 @@
 #!/usr/bin/python
-
+from threading import Thread
 
 import BeautifulSoup
 
-#TODO: something
-
-#FIXME: test
 
 class SAMParser(object):
 
@@ -25,25 +22,62 @@ class SAMParser(object):
 	def categoryIds(self):
 		return self._categories.keys()
 
+	@property
+	def parsing(self):
+		return self._parsing
+
 
 	def __init__(self):
 		
-		self.parser_data = []
-
-		self.soup = BeautifulSoup.BeautifulSoup()
+		self._parsing = False
 
 		self._categories = {}
 		self._values = {}
 
 	def parseData(self, data):
-
-		self._categories = {}
-		self._values = {}
 		
+		self._parsing = True
+
+		th = ParseThread(data)
+		th.start()
+		th.join()
+		self._categories = th.categories
+		self._values = th.values
+
+		self._parsing = False
+
+
+	def getValue(self, valId):
+		return self._values[valId]
+
+
+	def getCategory(self, catId):
+		return self._categories[catId]
+
+
+	def __getitem__(self, key):
+		return self.getValue(key)
+
+
+	def has_key(self, key):
+		return self._values.has_key(key)
+
+
+class ParseThread(Thread):
+	
+	def __init__(self, data):
+		Thread.__init__(self)
+
+		self.categories = {}
+		self.values = {}
 		data = data.decode('latin1')
-		self.soup.reset()
-		self.soup.feed(data)
-		self.soup.close()
+		self._soup = BeautifulSoup.BeautifulSoup()
+		self._soup.reset()
+		self._soup.feed(data)
+		self._soup.close()		
+
+
+	def run(self):
 
 		def check(tag):
 			if not tag.name == 'a':
@@ -55,7 +89,7 @@ class SAMParser(object):
 			return True
 
 
-		for item in self.soup.findAll(check):
+		for item in self._soup.findAll(check):
 			
 			values = []
 			rows = []
@@ -63,7 +97,7 @@ class SAMParser(object):
 
 			catId = item.attrMap['href'][1:]
 			catName = item.u.font.string.replace('&amp;', 'and')
-			table = self.soup.find('a', {'name' : catId}).parent.parent.parent
+			table = self._soup.find('a', {'name' : catId}).parent.parent.parent
 
 			for child in table.findChildren('tr'):
 				rows.append(child)
@@ -83,27 +117,11 @@ class SAMParser(object):
 
 				values.append(value)
 	
-				self._values[valId] = pValue
+				self.values[valId] = pValue
 			
 			pCat = ParserCategory(catId, catName, values)
 			
-			self._categories[catId] = pCat
-
-
-	def getValue(self, valId):
-		return self._values[valId]
-
-
-	def getCategory(self, catId):
-		return self._categories[catId]
-
-
-	def __getitem__(self, key):
-		return self.getValue(key)
-
-
-	def has_key(self, key):
-		return self._values.has_key(key)
+			self.categories[catId] = pCat
 
 
 

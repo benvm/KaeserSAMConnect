@@ -4,6 +4,7 @@ from optparse import OptionParser
 import gobject
 from gobject import GObject
 import gtk
+import gtk.gdk
 import gtk.glade
 
 import defs
