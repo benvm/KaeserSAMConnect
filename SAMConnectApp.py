@@ -94,7 +94,7 @@ def main():
 	parser = OptionParser(usage)
 	parser.set_defaults(server=defs.HOST, interval=defs.INTERVAL,
 						invisible=False, connect=False, log=False,
-						maxlog=defs.MAX_LOGCOUNT)
+						maxlog=defs.MAX_LOGCOUNT, debug=False)
 	parser.add_option('-i', '--invisible',
 						action='store_true', dest='invisible')
 	parser.add_option('-s', '--server', dest='server',
@@ -110,6 +110,8 @@ def main():
 								% (defs.MIN_INTERVAL, defs.MAX_INTERVAL))
 	parser.add_option('-m', '--max-log', dest='maxlog',
 						help='Maximum aantal loglijnen per blad')
+	parser.add_option('-d', '--debug',
+						action='store_true', dest='debug')
 						
 	(options, args) = parser.parse_args()
 	if len(args) != 0:
@@ -122,6 +124,7 @@ def main():
 		options.interval = defs.MAX_INTERVAL
 	defs.INTERVAL = options.interval
 	defs.MAX_LOGCOUNT = options.maxlog
+	defs.DEBUG = options.debug
 
 	app = SAMConnectApp()
 	if not options.invisible:

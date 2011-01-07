@@ -85,15 +85,14 @@ class ConnectionController(GObject):
 	def _timeout_cb(self):
 		debug('ConnectionController: entering timeout_cb')
 		self._thread = ReadParseThread(self._connection)
-		self._thread.connect('finished', self._thread_finished)
 		self._thread.start()
+		while self._thread.isAlive():
+			gtk.main_iteration(False)
 		self._thread.join()
-
-	
-	def _thread_finished(self, th, parser):
-		if th.error:
+		
+		if self._thread.error:
+			error('ConnectionController: could not read the connection')
 			if self._stop_on_error:
-				error('ConnectionController: could not read the connection')
 				dialog = gtk.MessageDialog(None, 
 											gtk.DIALOG_DESTROY_WITH_PARENT,
 											gtk.MESSAGE_ERROR,
@@ -103,10 +102,9 @@ class ConnectionController(GObject):
 				dialog.destroy()
 				self._connect_button.set_active(False)
 		else:
-			self._parser = parser
+			self._parser = self._thread.parser
 			self.emit('data-arrived')
-		
-
+		return True
 
 
 	def activate(self, active):
@@ -114,17 +112,14 @@ class ConnectionController(GObject):
 		
 		
 	
-class ReadParseThread(Thread, GObject):
+class ReadParseThread(Thread):
 	
-	__gsignals__ = {'finished': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE, 
-													(gobject.TYPE_PYOBJECT,)),}
-
 	def __init__(self, connection):
 		debug ('ReadParseThread: Initializing')
 		Thread.__init__(self)
-		GObject.__init__(self)
 		self._connection = connection
 		self.error = False
+		self.parser = None
 
 	def run(self):
 		debug ('ReadParseThread: Running')
@@ -136,10 +131,8 @@ class ReadParseThread(Thread, GObject):
 			self.error = True
 			return
 		
-		parser = SAMParser()
-		parser.parseData(data)
+		self.parser = SAMParser()
+		self.parser.parseData(data)
 		
-		debug('ReadParseThread: emiting finished signal')
-		self.emit('finished', parser)
-
+		debug('ReadParseThread: finished')
 		
