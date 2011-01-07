@@ -13,6 +13,8 @@ MIN_INTERVAL = 20
 
 MAX_LOGCOUNT=50000
 
+DEBUG = False
+
 if platform.system() == 'Windows':
 	try:
 		data_dir = os.environ['APPDATA']
@@ -38,7 +40,8 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 def debug(msg):
-	logger.debug(msg)
+	if DEBUG:
+		logger.debug(msg)
 	
 def error(msg):
 	logger.error(msg)
