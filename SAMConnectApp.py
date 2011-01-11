@@ -13,11 +13,13 @@ from Visualisation import VisualisationController
 from ConnectionController import ConnectionController
 from LoggingController import LoggingController
 
+from utils import module_path
+
 
 class SAMConnectApp:
 	def __init__(self):
 		
-		self._dir = os.path.dirname(__file__)
+		self._dir = os.path.dirname(module_path())
 		file = os.path.join(self._dir, 'SAMView.glade')
 		
 		self.glade = gtk.glade.XML(file)
@@ -128,7 +130,7 @@ def main():
 
 	app = SAMConnectApp()
 	if not options.invisible:
-		app.window.show_all()	
+		app.window.show_all()
 	#activate controllers only after main loop is started 
 	gobject.timeout_add_seconds(2, _activate_controllers, app, options)
 
@@ -145,7 +147,7 @@ def _activate_controllers(app, options):
 if __name__ == '__main__':
 	main()
 	
-	
+
 	
 
 	

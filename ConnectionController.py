@@ -1,4 +1,3 @@
-from time import time
 from threading import Thread
 
 import gobject
