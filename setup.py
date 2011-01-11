@@ -9,6 +9,8 @@ setup(
     windows = [
                   {
                       'script': 'SAMConnectApp.py',
+                      'icon_resources': [(1, "SAMConnect.ico")]
+
                   }
                 ],
 
